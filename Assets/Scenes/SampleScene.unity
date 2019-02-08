@@ -265,8 +265,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104877903}
-        m_MethodName: QuetionAnswer
+      - m_Target: {fileID: 1232015798}
+        m_MethodName: QuetionAnswer1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -701,6 +702,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8204986ff8b934ad3a931efa44b31192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &570263543
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,6 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 570263545}
   - component: {fileID: 570263544}
+  - component: {fileID: 570263546}
   m_Layer: 0
   m_Name: QuizM
   m_TagString: Untagged
@@ -728,7 +741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dba936c0c5248a6a4d62123badc4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 757019633}
 --- !u!4 &570263545
 Transform:
   m_ObjectHideFlags: 0
@@ -742,6 +754,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570263546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570263543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312b6fbd599ae448cbcf64f364d8ff3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 0}
+  text: {fileID: 757019633}
 --- !u!1 &678326866
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,8 +844,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 678326871}
-        m_MethodName: QuetionAnswer
+      - m_Target: {fileID: 1232015798}
+        m_MethodName: QuetionAnswer2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1104,8 +1129,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109362451}
-        m_MethodName: QuetionAnswer
+      - m_Target: {fileID: 1232015798}
+        m_MethodName: QuetionAnswer4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1162,6 +1187,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a3a6f9a3a1d4ce4a41ab5b37dfe7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1232015797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232015799}
+  - component: {fileID: 1232015798}
+  m_Layer: 0
+  m_Name: JudgeM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232015798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232015797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a3a6f9a3a1d4ce4a41ab5b37dfe7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1232015799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232015797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631353752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,8 +1304,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631353757}
-        m_MethodName: QuetionAnswer
+      - m_Target: {fileID: 1232015798}
+        m_MethodName: QuetionAnswer3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

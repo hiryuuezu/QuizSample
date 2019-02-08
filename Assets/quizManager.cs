@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class quizManager : MonoBehaviour {
+public class quizManager : MonoBehaviour
+{
     string[,] quizDate;
-    Text buttonText;
+     public Text buttonText;
     public Text text;
 
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
 
         Quetion1();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-      
+    // Update is called once per frame
+    void Update()
+    {
+
+
 
     }
 
-    void Quetion1(){
+   public void Quetion1()
+    {
         quizDate = csvManager.ReadCsvFile("CSV/quiz");
         text.text = quizDate[1, 0];
         for (int i = 1; i < quizDate.GetLength(1); i++)
@@ -35,8 +39,15 @@ public class quizManager : MonoBehaviour {
             buttonText.text = quizDate[1, i];
 
         }
+
+        if(buttonText.text == "2020年")
+        {
+            Quetion2();
+
+        }
+
     }
-   public void Quetion2()
+    public void Quetion2()
     {
         quizDate = csvManager.ReadCsvFile("CSV/quiz");
         text.text = quizDate[2, 0];
