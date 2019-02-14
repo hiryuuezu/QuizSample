@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 0}
-  text: {fileID: 757019633}
+  quizText: {fileID: 757019633}
 --- !u!1 &678326866
 GameObject:
   m_ObjectHideFlags: 0
