@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class quizManager : MonoBehaviour
+public class QuizManager : MonoBehaviour
 {
     string[,] quizDate;
-     public Text buttonText;
+    public Text buttonText;
     public Text text;
 
 
@@ -40,11 +40,7 @@ public class quizManager : MonoBehaviour
 
         }
 
-        if(buttonText.text == "2020年")
-        {
-            Quetion2();
-
-        }
+    
 
     }
     public void Quetion2()

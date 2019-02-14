@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class judgeManager : MonoBehaviour {
+public class JudgeManager : MonoBehaviour {
     int quizCount;
     int trueCount;
-    quizManager script;
+    QuizManager script;
     GameObject quizM;
    
 
@@ -15,7 +15,7 @@ public class judgeManager : MonoBehaviour {
     void Start () {
         quizCount = 0;
         quizM = GameObject.Find("QuizM");
-        script = quizM.GetComponent<quizManager>();
+        script = quizM.GetComponent<QuizManager>();
     }
 
     // Update is called once per frame
