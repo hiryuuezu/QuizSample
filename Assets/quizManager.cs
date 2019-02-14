@@ -16,6 +16,8 @@ public class QuizManager : MonoBehaviour
     //=>もしなんどもこぴぺしているなとかんじたら、まとめられないか考える。
     //つねにインデントは揃える => {}の位置がわからなくなる。
     //空白行も無駄に増やさない。
+    //拡張するときはできるだけ少ない変更で済むように(たとえばくいずを増やす場合CSVの更新だけで済むように)
+    //違う場所だけ変数にする
 
 
 
@@ -23,9 +25,8 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         quizCount = 0;
-
         quizM = GameObject.Find("QuizM");
-        Quetion1();
+        DisplayQuestion(1);
 
     }
 
@@ -35,10 +36,10 @@ public class QuizManager : MonoBehaviour
         switch (quizCount)
         {
             case 1:
-                Quetion2();
+                DisplayQuestion(2);
                 break;
             case 2:
-                Quetion3();
+                DisplayQuestion(3);
                 break;
             case 3:
                 PlayerPrefs.SetInt("count", trueCount);
@@ -47,48 +48,19 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void Quetion1()
+    public void DisplayQuestion(int dataRow)
     {
         quizDate = csvManager.ReadCsvFile("CSV/quiz");
-        text.text = quizDate[1, 0];
-        for (int i = 1; i < quizDate.GetLength(1); i++)
+        text.text = quizDate[dataRow, 0];
+        for (int i = 1; i < quizDate.GetLength(1) -1; i++)
         {
             buttonText = GameObject.Find("Button" + i).GetComponentInChildren<Text>();
-
-            buttonText.text = quizDate[1, i];
-        }
-
-    
-
-    }
-    public void Quetion2()
-    {
-        quizDate = csvManager.ReadCsvFile("CSV/quiz");
-        text.text = quizDate[2, 0];
-        for (int i = 1; i < quizDate.GetLength(1); i++)
-        {
-            buttonText = GameObject.Find("Button" + i).GetComponentInChildren<Text>();
-
-            buttonText.text = quizDate[2, i];
-
+            buttonText.text = quizDate[dataRow, i];
         }
     }
-    public void Quetion3()
+    public void SelectAnswer(int buttonNumber) 
     {
-        quizDate = csvManager.ReadCsvFile("CSV/quiz");
-        text.text = quizDate[3, 0];
-        for (int i = 1; i < quizDate.GetLength(1); i++)
-        {
-            buttonText = GameObject.Find("Button" + i).GetComponentInChildren<Text>();
-
-            buttonText.text = quizDate[3, i];
-
-        }
-    }
-
-    public void QuetionAnswer1()
-    {
-        Text selectedBtn = GameObject.Find("Button1").GetComponentInChildren<Text>();
+        Text selectedBtn = GameObject.Find("Button" + buttonNumber.ToString()).GetComponentInChildren<Text>();
 
 
         if (selectedBtn.text == "2020年" || selectedBtn.text == "野球" || selectedBtn.text == "カレー")
@@ -108,68 +80,4 @@ public class QuizManager : MonoBehaviour
         Debug.Log(quizCount);
     }
 
-    public void QuetionAnswer2()
-    {
-        Text selectedBtn = GameObject.Find("Button2").GetComponentInChildren<Text>();
-
-
-        if (selectedBtn.text == "2020年" || selectedBtn.text == "野球" || selectedBtn.text == "カレー")
-        {
-
-            trueCount++;
-            Debug.Log("正解");
-
-        }
-        else
-        {
-            Debug.Log("不正解");
-
-        }
-
-        quizCount++;
-        Debug.Log(quizCount);
-    }
-    public void QuetionAnswer3()
-    {
-        Text selectedBtn = GameObject.Find("Button3").GetComponentInChildren<Text>();
-
-
-        if (selectedBtn.text == "2020年" || selectedBtn.text == "野球" || selectedBtn.text == "カレー")
-        {
-
-            trueCount++;
-            Debug.Log("正解");
-
-        }
-        else
-        {
-            Debug.Log("不正解");
-
-        }
-
-        quizCount++;
-        Debug.Log(quizCount);
-    }
-
-    public void QuetionAnswer4()
-    {
-        Text selectedBtn = GameObject.Find("Button4").GetComponentInChildren<Text>();
-
-
-        if (selectedBtn.text == "2020年" || selectedBtn.text == "野球" || selectedBtn.text == "カレー")
-        {
-
-            trueCount++;
-            Debug.Log("正解");
-
-        }
-        else
-        {
-            Debug.Log("不正解");
-
-        }
-
-        quizCount++;
-        Debug.Log(quizCount);
-    }
 }
